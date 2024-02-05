@@ -12,6 +12,11 @@ pipeline{
                 sh 'python3 data_analysis.py'
             }
         }
+        stage("Data Preprocessing"){
+            steps{
+                sh 'python3 data_preprocessing.py'
+            }
+        }
 
         }
 }
