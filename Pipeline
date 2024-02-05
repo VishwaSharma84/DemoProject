@@ -22,6 +22,16 @@ pipeline{
                 sh 'python3 data_visualization.py'
             }
         }
-
+        stage("Feature Engineering"){
+            steps{
+                sh 'python3 feature_engineering.py'
+            }
         }
+    }
+    post{
+       
+        always {
+            archiveArtifacts artifacts: 'customer_data_cleansed.csv', onlyIfSuccessful: true
+        }
+            }
 }
