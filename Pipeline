@@ -6,6 +6,11 @@ pipeline{
             steps{
                 sh 'python3 data_extraction.py'
             }
+        stage("Data Analysis"){
+            steps{
+                sh 'python3 data_analysis.py'
+            }
+        }
         }
     }
 }
