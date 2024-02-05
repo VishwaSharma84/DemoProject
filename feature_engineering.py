@@ -1,4 +1,4 @@
-from datavisualization import visualize_data
+from data_visualization import visualize_data
 import numpy as np
 
 def feature_engineering():
