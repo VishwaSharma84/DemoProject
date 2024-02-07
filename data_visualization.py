@@ -29,14 +29,14 @@ def visualize_data():
     # for value in ["sex", "education", "age", "marital_status"]:
     #     sns.barplot(data=data, x=value, y="income")
     #     plt.show()
-    for categorical_feature in categorical_columns:
-        fig = px.histogram(data, x=categorical_feature)
-        fig.update_layout(template='plotly_dark')
-        fig.update_xaxes(showgrid=False)
-        fig.update_yaxes(showgrid=False)
-        # a.append(fig)
-        # fig.show()
-        fig.write_image(f"histogram_{categorical_feature}.jpg")
+    # for categorical_feature in categorical_columns:
+    #     fig = px.histogram(data, x=categorical_feature)
+    #     fig.update_layout(template='plotly_dark')
+    #     fig.update_xaxes(showgrid=False)
+    #     fig.update_yaxes(showgrid=False)
+    #     # a.append(fig)
+    #     # fig.show()
+    #     fig.write_image(f"histogram_{categorical_feature}.jpg")
     data['sex'] = data['sex'].replace('male', 0)
     data['sex'] = data['sex'].replace('female',1)
     data['marital_status'] = data['marital_status'].replace('single', 0)
@@ -57,14 +57,14 @@ def visualize_data():
     #     sns.boxplot(data[column])
     #     plt.xlabel(column)
     #     plt.show()
-    for numerical_feature in data.columns:
-        fig = px.box(data, y=numerical_feature)
-        fig.update_layout(template='plotly_dark')
-        fig.update_xaxes(showgrid=False)
-        fig.update_yaxes(showgrid=False,zeroline=True,zerolinewidth=4)
-        # a.append(fig)
-        # fig.show()
-        fig.write_image(f"boxplot_{numerical_feature}.jpg")
+    # for numerical_feature in data.columns:
+    #     fig = px.box(data, y=numerical_feature)
+    #     fig.update_layout(template='plotly_dark')
+    #     fig.update_xaxes(showgrid=False)
+    #     fig.update_yaxes(showgrid=False,zeroline=True,zerolinewidth=4)
+    #     # a.append(fig)
+    #     # fig.show()
+    #     fig.write_image(f"boxplot_{numerical_feature}.jpg")
     return data
 
 visualize_data()
